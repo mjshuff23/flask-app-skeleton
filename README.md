@@ -51,28 +51,18 @@
 #### 5. Create a `config.py` in your `app` folder with this code:
   - `import os` - To grab global set variables
   - `class Config:`
-    - `SECRET_KEY = os.environ.get("SECRET_KEY") or '{default-key'}`
+    - `SECRET_KEY = os.environ.get("SECRET_KEY") or '{default-key}'`
     - `SQLALCHEMY_TRACK_MODIFICATIONS = False`
     - `SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")`
 #### 6. Back in your `app/__init__.py` do the following:
   - Import your Config class: `from config import Config`
   - Tell `app` to use config: `app.config.from_object(Config)`
 ---
-## Part III: Adding Styles and Templates for Jinja2/Pug
+## Part III: Adding Static Folder and Initial Blueprint
 #### 1. Flask has a built-in special route `/static` that will look for a directory named `/static` in the directory of your project where you create the `Flask` object
  ####  - Create a folder in your `app` folder called `static` for static files
   - _i.e.:_ `http://localhost:5000/static/styles/main.css`
-#### 2. Install Jinja2 or Pug:
-  - `pipenv install Jinja2`
-  - `pipenv install pypugjs`
-    - **_NOTE:_** If you choose to use pug, you must add this line to your `__init__.py` file after `app = Flask(__name__)`:
-     - `app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')`
-
-#### 3. Create a `templates` folder in the `app` directory for your template views
-  - Create a file `index.html` in your templates folder:
-    - Create a skeleton html:5 file (you should be able to use Emmet)
-
-#### 4. Create a `routes` folder in your `app` directory
+#### 2. Create a `routes` folder in your `app` directory
  - Create an empty `__init__.py` to make it a module
  - In your `app` directory, rename `routes.py` to `index.py` and move it into your new `routes` directory
  - In your `index.py` you just moved into routes, make the following updates:
