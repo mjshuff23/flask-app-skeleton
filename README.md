@@ -1,11 +1,7 @@
 # Steps for Creation of Flask App
-
 ### This is a step-by-step guide to get a basic Flask App running and connected to a Database
-
 **_NOTE:_** code surrounded in **_{ }_** means you need to specify something here and not just copy the word. Do not put the **_{ }_** in the code!
-
 ---
-
 ## Part I: Basic, Running Flask App
 
 #### 1. Make a directory for your project from terminal: `mkdir {project_name}`
