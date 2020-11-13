@@ -83,3 +83,4 @@
    - remove `'Hello, World!'` from the return statement
    - add `render_template("index.html")` to the return statement
 #### Congratulations! If everything went well, you have your first Blueprint running as your index page!
+
