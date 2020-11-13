@@ -8,16 +8,16 @@
 
 ## Part I: Basic, Running Flask App
 
-1. Make a directory for your project from terminal: `mkdir {project_name}`
-2. Create a GitHub repository for your project:
+#### 1. Make a directory for your project from terminal: `mkdir {project_name}`
+#### 2. Create a GitHub repository for your project:
   - Initialization: `git init`
   - Add `.gitignore`: `curl https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore > .gitignore`
   - Initial Commit: `git add .`
   - `git commit -m 'Initial Commit'`
-3. Install virtual environment(_venv_): `pipenv install --python "$PYENV_ROOT/shims/python"`
+#### 3. Install virtual environment(_venv_): `pipenv install --python "$PYENV_ROOT/shims/python"`
   - **Note:** To launch the venv shell: `pipenv shell`
-4. Install flask module: `pipenv install flask`
-5. Create an `app` folder in the root of the project
+#### 4. Install flask module: `pipenv install flask`
+#### 5. Create an `app` folder in the root of the project
   - Create an `__init__.py` file in the app folder:
     - Import Flask: `from flask import Flask`
     - Define a Flask instance: `app = Flask(__name__)`
@@ -62,39 +62,28 @@
   - Import your Config class: `from config import Config`
   - Tell `app` to use config: `app.config.from_object(Config)`
 ---
-
 ## Part III: Adding Styles and Templates for Jinja2/Pug
-
 1. Flask has a built-in special route `/static` that will look for a directory named `/static` in the directory of your project where you create the `Flask` object
-
-- Create a folder in your `app` folder called `static` for static files
-
-- _i.e.:_ `http://localhost:5000/static/styles/main.css`
-
+  - Create a folder in your `app` folder called `static` for static files
+  - _i.e.:_ `http://localhost:5000/static/styles/main.css`
 2. Install Jinja2 or Pug:
-
-- `pipenv install Jinja2`
-
-- `pipenv install pypugjs`
-
-  - **_NOTE:_** If you choose to use pug, you must add this line to your `__init__.py` file after `app = Flask(__name__)`:
-
-  - `app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')`
+  - `pipenv install Jinja2`
+  - `pipenv install pypugjs`
+    - **_NOTE:_** If you choose to use pug, you must add this line to your `__init__.py` file after `app = Flask(__name__)`:
+     - `app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')`
 
 3. Create a `templates` folder in the `app` directory for your template views
-
-   - Create a file `index.html` in your templates folder:
-     - Create a skeleton html:5 file (you should be able to use Emmet)
+  - Create a file `index.html` in your templates folder:
+    - Create a skeleton html:5 file (you should be able to use Emmet)
 
 4. Create a `routes` folder in your `app` directory
-   - Create an empty `__init__.py` to make it a module
-   - In your `app` directory, rename `routes.py` to `index.py` and move it into your new `routes` directory
-   - In your `index.py` you just moved into routes, make the following updates:
-     - remove `from app import app` completely
-     - add `from flask import Blueprint, render_template`
-     - under that, add `bp = Blueprint("index", __name__, url_prefix="")`
-     - replace the `@app.route("/")` decorator with `@bp.route("/")`
-     - remove `'Hello, World!'` from the return statement
-     - add `render_template("index.html")` to the return statement
-
+ - Create an empty `__init__.py` to make it a module
+ - In your `app` directory, rename `routes.py` to `index.py` and move it into your new `routes` directory
+ - In your `index.py` you just moved into routes, make the following updates:
+   - remove `from app import app` completely
+   - add `from flask import Blueprint, render_template`
+   - under that, add `bp = Blueprint("index", __name__, url_prefix="")`
+   - replace the `@app.route("/")` decorator with `@bp.route("/")`
+   - remove `'Hello, World!'` from the return statement
+   - add `render_template("index.html")` to the return statement
 #### Congratulations! If everything went well, you have your first Blueprint running as your index page!
