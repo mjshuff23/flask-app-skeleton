@@ -58,11 +58,8 @@
   - Import your Config class: `from config import Config`
   - Tell `app` to use config: `app.config.from_object(Config)`
 ---
-## Part III: Adding Static Folder and Initial Blueprint
-#### 1. Flask has a built-in special route `/static` that will look for a directory named `/static` in the directory of your project where you create the `Flask` object
- ####  - Create a folder in your `app` folder called `static` for static files
-  - _i.e.:_ `http://localhost:5000/static/styles/main.css`
-#### 2. Create a `routes` folder in your `app` directory
+## Part III: Adding Initial Blueprint
+#### 1. Create a `routes` folder in your `app` directory
  - Create an empty `__init__.py` to make it a module
  - In your `app` directory, rename `routes.py` to `index.py` and move it into your new `routes` directory
  - In your `index.py` you just moved into routes, make the following updates:
@@ -70,5 +67,8 @@
    - add `from flask import Blueprint, render_template`
    - under that, add `bp = Blueprint("index", __name__, url_prefix="")`
    - replace the `@app.route("/")` decorator with `@bp.route("/")`
+#### 2. In your `app/__init__.py` add the following code:
+  - `from .routes import index`
+  - `app.register_blueprint(index.bp)`
 #### Congratulations! If everything went well, you have your first Blueprint running as your index page!
 
