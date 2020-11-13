@@ -9,53 +9,29 @@
 ## Part I: Basic, Running Flask App
 
 1. Make a directory for your project from terminal: `mkdir {project_name}`
-
 2. Create a GitHub repository for your project:
-
-- Initialization: `git init`
-
-- Add `.gitignore`: `curl https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore > .gitignore`
-
-- Initial Commit: `git add .`
-
-- `git commit -m 'Initial Commit'`
-
+  - Initialization: `git init`
+  - Add `.gitignore`: `curl https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore > .gitignore`
+  - Initial Commit: `git add .`
+  - `git commit -m 'Initial Commit'`
 3. Install virtual environment(_venv_): `pipenv install --python "$PYENV_ROOT/shims/python"`
-
-- **Note:** To launch the venv shell: `pipenv shell`
-
+  - **Note:** To launch the venv shell: `pipenv shell`
 4. Install flask module: `pipenv install flask`
-
 5. Create an `app` folder in the root of the project
-
-- Create an `__init__.py` file in the app folder
-
-- Import Flask: `from flask import Flask`
-
-- Define a Flask instance: `app = Flask(__name__)`
-
-- `__name__` - Python predefined variable, which is set to the name of the module in which it is used
-
-- Import routes _(not yet made)_: `from app import routes`
-
-- Create a `routes.py` file in the app folder
-
-- Import app: `from app import app`
-
-- Define a root route:
-
-- Decorator: `@app.route('/')`
-
-- Decorator: `@app.route('/index')`
-
-- View Function: `def index():`
-
-- `return 'Hello, World!'`
-
+  - Create an `__init__.py` file in the app folder:
+    - Import Flask: `from flask import Flask`
+    - Define a Flask instance: `app = Flask(__name__)`
+     - `__name__` - Python predefined variable, which is set to the name of the module in which it is used
+    - Import routes _(not yet made)_: `from app import routes`
+  - Create a `routes.py` file in the app folder
+    - Import app: `from app import app`
+    - Define a root route:
+    - Decorator: `@app.route('/')`
+    - Decorator: `@app.route('/index')`
+    - View Function: `def index():`
+     - `return 'Hello, World!'`
 6. Create a main file in root to run Flask from: `{your_project.py}`
-
-- `from app import app`
-
+  - `from app import app`
 ---
 
 ## Part II: Setting Global Variables + Configuring Flask App
