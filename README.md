@@ -70,7 +70,5 @@
    - add `from flask import Blueprint, render_template`
    - under that, add `bp = Blueprint("index", __name__, url_prefix="")`
    - replace the `@app.route("/")` decorator with `@bp.route("/")`
-   - remove `'Hello, World!'` from the return statement
-   - add `render_template("index.html")` to the return statement
 #### Congratulations! If everything went well, you have your first Blueprint running as your index page!
 
