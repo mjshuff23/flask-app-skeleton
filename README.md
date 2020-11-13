@@ -55,7 +55,7 @@
 #### 5. Create a `config.py` in your `app` folder with this code:
   - `import os` - To grab global set variables
   - `class Config:`
-    - `SECRET_KEY = os.environ.get("SECRET_KEY") or 'default-key-for-devs'`
+    - `SECRET_KEY = os.environ.get("SECRET_KEY") or '{default-key'}`
     - `SQLALCHEMY_TRACK_MODIFICATIONS = False`
     - `SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")`
 #### 6. Back in your `app/__init__.py` do the following:
