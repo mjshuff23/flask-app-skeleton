@@ -9,7 +9,8 @@
  2. Create a GitHub repository for your project:
      - Initialization: `git init`
      - Add `.gitignore`: `curl https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore > .gitignore`
-     - Initial Commit: `git add .;git commit -m 'Initial Commit'`
+     - Initial Commit: `git add .`
+	     - `git commit -m 'Initial Commit'`
  4. Install virtual environment(*venv*): `pipenv install --python "$PYENV_ROOT/shims/python"`
      - **Note:** To launch the venv shell: `pipenv shell`
  5. Install flask module: `pipenv install flask`
